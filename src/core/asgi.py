@@ -1,9 +1,7 @@
 from fastapi import FastAPI
 from sentry_sdk import init as sentry_init
 from sentry_sdk.integrations.asyncio import AsyncioIntegration
-from sentry_sdk.integrations.asyncpg import AsyncPGIntegration
 from sentry_sdk.integrations.loguru import LoguruIntegration
-from sentry_sdk.integrations.sqlalchemy import SqlalchemyIntegration
 from starlette.middleware.cors import CORSMiddleware
 
 from src.config import settings
@@ -26,9 +24,7 @@ def get_app() -> FastAPIWrapper:
             profiles_sample_rate=settings.sentry.profiles_sample_rate,
             integrations=[
                 AsyncioIntegration(),
-                AsyncPGIntegration(),
                 LoguruIntegration(),
-                SqlalchemyIntegration(),
             ],
         )
     app = FastAPIWrapper(
