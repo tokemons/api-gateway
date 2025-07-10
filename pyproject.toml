@@ -5,7 +5,7 @@ description = "api-gateway for users to access public methods using REST Api and
 authors = [
     { name = "Ruslan Korneev", email = "admin@ruslan.beer" },
 ]
-requires-python = ">=3.13.3,<4.0"
+requires-python = ">=3.13.5,<4.0"
 readme = "README.md"
 dependencies = [
     "fastapi[all] (>=0.115.6,<0.116.0)",
